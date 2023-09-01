@@ -1,0 +1,19 @@
+
+.world{
+    display: flex;
+}
+.world-left{
+    background: lightgrey;
+    width: 20vw;
+    height: 100vh;
+
+    padding-top: 10vh;
+    
+}
+
+.world-right{
+    width: 80vw;
+    height: 100vh;
+
+    padding-top: 10vh;
+}

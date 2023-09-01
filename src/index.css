@@ -1,0 +1,149 @@
+
+/* 🍉google font import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Open+Sans&family=Preahvihear&family=Rubik:wght@500&display=swap');
+
+
+
+:root {
+    /* main */
+    --width-main: 1200px;
+
+    /* font */
+    --font-base: 'Cormorant Upright', serif;
+    --font-alt: 'Open Sans', sans-serif;
+    
+    /* size */
+    --base: 1rem;
+    --sm: calc(var(--base) * 1.5);
+    --med: calc(var(--base) * 3);
+    --large: calc(var(--base) * 5);
+  
+    /*  */
+    --shadow: 0 2rem 3rem #777;
+  
+    /* border-radius :basic 4px=0.25rem  */
+    --border-radius-4px: 0.3rem;
+  
+    /* Animation :basic 300ms=0.3s  */
+    --animation_basic-duration-300ms: 300ms;
+  
+    /* letterspacing : basic 0.1rem */
+    --letterspacing-basic: 0.1rem;
+    
+      
+    /* color */
+    --color-main1: #fff;
+    --color-main2: #fff;
+    --color-main3: #fff;
+
+
+    /* bootstrap */
+    --color-primary: #0d6efd;
+    --color-secondary: #6C757D;
+    --color-success: #198754;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #0dcaf0;
+    --color-light: #f8f9fa;
+    --color-dark: #212529;
+      
+    /*  */    
+    --color-10: #003049;
+    --color-10-dark: #01111a;
+
+    --color-20: #d62828;
+    --color-20-dark: #5a0a0a;
+
+    --color-30: #446df6;
+
+    --color-40: #33ca7f;
+
+    --color-50: #fee101;
+
+    --color-70: #f77f00;
+    --color-70-dark: #5e3101;
+
+    --color-80: #fcbf49;
+    --color-80-dark: #a8740c;
+
+    --color-90: #eae2b7;
+
+    --color-750: #fff;
+    --color-800: #f8f9fa;
+    --color-810: #e9ecef;
+    --color-820: #dee2e6;
+    --color-830: #ced4da;
+    --color-840: #adb5bd;
+    --color-850: #6c757d;
+    --color-860: #495057;
+    --color-870: #343a40;
+    --color-880: #212529;
+    --color-950: #000;
+
+    /*  */
+  --color-naver: #0eae44;
+  --color-facebook: #3b5998;
+  --color-netflix: #d61319;
+  --color-kakao: #fee101;
+
+  --color-red: #e01541;
+  --color-blue: #446df6;
+  --color-green: #33ca7f;
+
+  --color-black: #000;
+
+  --color-grey: #555;
+  --color-grey-light1: #777;
+  --color-grey-light2: #aaa;
+
+  --color-white-darker: #eee;
+  --color-white: #fff;
+    
+}
+
+* {
+  /* font-family: "Open Sans", sans-serif; */
+
+  text-decoration: none; 
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  /* 🦄margin의 기준선이 border를 기준으로  만들어짐 */
+  box-sizing: border-box;
+
+  /* 🦄  모든 transition에 공통으로 넣음. 일일히 각 element마다 transition넣을 필요없음*/
+  transition: all 0.2s linear;   
+
+  font-size: 100%;  
+
+  /* 👉google font import */
+  font-family: 'Preahvihear', sans-serif;
+
+  /* scroll부드럽게 ( + html : <a href="#~~~~"></a> 써야함) */
+  scroll-behavior: smooth;
+
+  /* 🦄 tip: 코딩편함  */
+  overflow-x: hidden;
+
+  /* 🦄 ???   */
+  scroll-padding-top:  6rem;  
+}
+
+
+body {
+  max-width: var(--width-main);
+  text-align: center;
+}
+
+
+
+a {
+  /* 🦄color: unset */
+  color: unset;
+  text-decoration: none;
+}
