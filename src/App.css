@@ -1,6 +1,8 @@
 
 .world{
+    
     display: flex;
+
 }
 .world-left{
     background: lightgrey;
@@ -16,4 +18,11 @@
     height: 100vh;
 
     padding-top: 10vh;
+
+}
+
+
+li .myButton{
+    /* width: 9rem;
+    text-align: center;  */
 }

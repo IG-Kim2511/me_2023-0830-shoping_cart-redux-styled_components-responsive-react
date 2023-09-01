@@ -22,14 +22,15 @@ function App() {
             <nav className='nav'>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" className='myButton'>Home</Link>
                 </li>
                 <li>
-                  <Link to="/products">products</Link>
+                  <Link to="/products"  className='myButton'>products</Link>
                 </li>
                 <li>
-                  <Link to="/cart">cart</Link>
+                  <Link to="/cart" className='myButton'>cart</Link>
                 </li>
+                
               </ul>
             </nav>  
           </div>
