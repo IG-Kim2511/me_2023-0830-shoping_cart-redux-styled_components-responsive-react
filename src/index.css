@@ -119,7 +119,7 @@
   /* 🦄  모든 transition에 공통으로 넣음. 일일히 각 element마다 transition넣을 필요없음*/
   transition: all 0.2s linear;   
 
-  font-size: 100%;  
+
 
   /* 👉google font import */
   font-family: 'Preahvihear', sans-serif;
