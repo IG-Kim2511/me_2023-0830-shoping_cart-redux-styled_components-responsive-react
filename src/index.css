@@ -135,6 +135,7 @@
 }
 
 
+/* 🍀🍀 universal */
 body {
   max-width: var(--width-main);
   text-align: center;
@@ -149,6 +150,22 @@ a {
   text-decoration: none;
 }
 
+
+img{
+  /*
+  container크기에 맞춤
+  width: 100%; 
+  */
+
+  /* all same size */
+  float: left;
+  width:  200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/* 🍀🍀 class name */
 
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;

@@ -3,18 +3,6 @@ input{
   background: lightgrey;
 }
 
-img{
-  /*
-  container크기에 맞춤
-  width: 100%; 
-  */
-
-  /* all same size */
-  float: left;
-  width:  200px;
-  height: 200px;
-  object-fit: cover;
-}
 
 ul {
   list-style: none;

@@ -1,15 +1,25 @@
 
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import "./products.css"
+
+// 🍀2023-0901 star rating + material ui icon
+import StarIcon from '@mui/icons-material/Star';
+import StarHalfIcon from '@mui/icons-material/StarHalf';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import { Rating } from '@mui/material';
 
 const Products = () => {
 
   // 🥒js0309-1140, filtered data vs fetched data 구별하기용
   const [data, setData] = useState([])
+  console.log(data)
 
 
   //🍀JS0309-1140, filter by category btn
-  const [filterData, setFilterData] = useState(data)
+  const [filterData, setFilterData] = useState([])
 
   // 🍀js0309-0610. loading
   /* 🍄
@@ -22,24 +32,6 @@ const Products = () => {
 
   // 🍀js0309-0630. fetch data, {data_item.description.substring(0, 12)}...
 
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-
-  //     setLoading(true);
-
-  //     const result = await axios("https://fakestoreapi.com/products");
-
-  //     console.log(result.data);
-
-  //     setData(result.data);
-  //     setFilterData(result.data);
-
-  //     setLoading(false);
-  //   };
-  //   fetchItems();
-  // }, []);
-
-
 
   
   useEffect(() => {
@@ -49,9 +41,13 @@ const Products = () => {
     axios.get(apiUrl)
       .then(response => {
         setData(response.data);
+        setFilterData(response.data);
         console.log(response.data)
         
         setLoading(false);
+        
+
+
       })
       .catch(err => {
         // setError(err);
@@ -60,16 +56,94 @@ const Products = () => {
   }, []);
 
 
+  
+    // 🥒JS0309-1140      🎃
+
+
+    // 👉2023-0901 star rating
+      const StarRating = ({ rating }) => {
+        return (
+          <div className="star-rating">
+            <Rating
+              name="half-rating"
+              value={rating}
+              precision={0.5}
+              icon={<StarIcon fontSize="inherit" />}
+              emptyIcon={<StarOutlineIcon fontSize="inherit" />}
+              halfIcon={<StarHalfIcon fontSize="inherit" />}
+              readOnly
+            />
+          </div>
+        );
+      };
+
+    // 
+
   const Loading = () => {
     return (
-      <h1>loading...fetching data from fakestore-api</h1>
+      <h1>Loading...Fetching data from fakestore-api</h1>
     )
   }
 
   const ShowProducts = () => {
     return (
-      <div>Products
-       
+      <div>
+        {/* 🥒js0309-0610. 🥒JS0309-1140, */}
+        <div className="btn-container">
+          <button className='myButton' onClick={()=>{}}>All</button>
+          <button className='myButton' onClick={()=>{}}>men</button>
+          <button className='myButton' onClick={()=>{}}>women</button>
+          <button className='myButton' onClick={()=>{}}>Jewelery</button>
+          <button className='myButton' onClick={()=>{}}>Electronic</button>
+        </div>
+
+        {/* category
+    : 
+    "men's clothing"
+    description
+    : 
+    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+    id
+    : 
+    1
+    image
+    : 
+    "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    price
+    : 
+    109.95
+    rating
+    : 
+    {rate: 3.9, count: 120}
+    title
+    : 
+    "Fjallraven - Foldsack No. 1 Backpack, Fits */}
+        
+        
+        {/* 🥒js0309-0630, 🥒JS0309-1140, */}
+        <div className="item-container">
+        {
+          filterData.map(product => (
+              <div key={product.id} className='product'>
+                <Link to={`/product/${product.id}`}>
+                  <img src={product.image} alt={product.title}/>
+                      <p>{product.title}</p>
+                      <p>Price: ${product.price}</p>
+                      <p>Rating:{product.rating.rate}</p>
+
+                      {/* 👉2023-0901 star rating */}
+                      <StarRating rating={product.rating.rate} />
+                  </Link>
+                  
+              </div>
+          ))
+        }
+
+
+          
+        </div>
+
+  
       </div>
     )
   }
@@ -77,6 +151,8 @@ const Products = () => {
 
   return (
     <div> 
+
+      
       {
         loading? 
           <Loading/>:
