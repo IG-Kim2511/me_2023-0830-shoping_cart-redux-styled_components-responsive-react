@@ -1,16 +1,18 @@
+
 import React, { useState } from 'react'
+
 
 const Products = () => {
 
   const [loading, setLoading] = useState(true)
 
 
-  
-    const Loading = () => {
-      return (
-        <h1>loading...fetching data from fakestore-api</h1>
-      )
-    }
+
+  const Loading = () => {
+    return (
+      <h1>loading...fetching data from fakestore-api</h1>
+    )
+  }
 
   const ShowProducts = () => {
     return (
@@ -22,8 +24,10 @@ const Products = () => {
   return (
     <div>
     
-      {
-        loading? 
+
+    
+    {
+      loading? 
         <Loading/>:
          <ShowProducts/>}
     </div>
