@@ -44,8 +44,7 @@ const Products = () => {
         setFilterData(response.data);
         console.log(response.data)
         
-        setLoading(false);
-        
+        setLoading(false);       
 
 
       })
@@ -55,11 +54,17 @@ const Products = () => {
       });
   }, []);
   
-    // 🥒JS0309-1140    filterProductFunc  🎃
+    // 🥒JS0309-1140    filterProductFunc  
+    const filterProductFunc=(item)=>{
 
+      console.log(item)
+      const updatedList = data.filter((x)=>{
+        return x.category === item});
+
+      setFilterData(updatedList);
+    }
 
     
-
 
     // 👉2023-0901 star rating
       const StarRating = ({ rating }) => {
@@ -91,36 +96,13 @@ const Products = () => {
       <div>
         {/* 🥒js0309-0610. 🥒JS0309-1140, */}
         <div className="btn-container">
-          <button className='myButton' onClick={()=>{}}>All</button>
-          <button className='myButton' onClick={()=>{}}>men</button>
-          <button className='myButton' onClick={()=>{}}>women</button>
-          <button className='myButton' onClick={()=>{}}>Jewelery</button>
-          <button className='myButton' onClick={()=>{}}>Electronic</button>
+          <button className='myButton' onClick={()=>{setFilterData(data)}}>All</button>
+          <button className='myButton' onClick={()=>{filterProductFunc("men's clothing")}}>men</button>
+          <button className='myButton' onClick={()=>{filterProductFunc("women's clothing")}}>women</button>
+          <button className='myButton' onClick={()=>{filterProductFunc("jewelery")}}>Jewelery</button>
+          <button className='myButton' onClick={()=>{filterProductFunc("electronics")}}>Electronic</button>
         </div>
-
-        {/* category
-    : 
-    "men's clothing"
-    description
-    : 
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
-    id
-    : 
-    1
-    image
-    : 
-    "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-    price
-    : 
-    109.95
-    rating
-    : 
-    {rate: 3.9, count: 120}
-    title
-    : 
-    "Fjallraven - Foldsack No. 1 Backpack, Fits */}
-        
-        
+       
         {/* 🥒js0309-0630, 🥒JS0309-1140, */}
         <div className="item-container">
         {
@@ -139,12 +121,8 @@ const Products = () => {
               </div>
           ))
         }
-
-
           
-        </div>
-
-  
+        </div>  
       </div>
     )
   }
