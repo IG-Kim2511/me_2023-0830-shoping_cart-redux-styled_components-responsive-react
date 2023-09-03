@@ -1,7 +1,7 @@
 // Cart.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decreaseQuantity, increaseQuantity, removeFromCart } from '../reducers/cartReducer';
+import { decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/reducers/cartReducer';
 
 const Cart = () => {
   // 👉redux

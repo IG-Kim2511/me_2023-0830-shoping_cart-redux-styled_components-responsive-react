@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../reducers/cartReducer';
+import { addToCart } from '../redux/reducers/cartReducer';
 
 
 

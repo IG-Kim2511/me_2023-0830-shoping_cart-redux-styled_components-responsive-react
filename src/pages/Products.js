@@ -18,7 +18,7 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Rating } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../reducers/cartReducer';
+import { addToCart } from '../redux/reducers/cartReducer';
 
 
 
