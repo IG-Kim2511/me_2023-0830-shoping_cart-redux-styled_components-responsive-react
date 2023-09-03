@@ -3,6 +3,7 @@
 indivisual product page with useParams, react router
 */
 
+import "./product.css"
 // Product.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -51,7 +52,7 @@ const Product = () => {
   }
 
   return (
-    <div>
+    <div className="product">
       <div className="item-wrap">
         <main className="items">
           <div className="item">
@@ -67,10 +68,11 @@ const Product = () => {
           
           </div>
 
-          
-        {/* 🥒js0310-0440. redux  */}
+            
+          {/* 🥒js0310-0440. redux  */}
 
-        <button  className='myButton' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+          <button  className='myButton' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+          
 
         </main>
 

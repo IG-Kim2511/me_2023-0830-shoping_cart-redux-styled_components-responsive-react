@@ -35,6 +35,7 @@ const Cart = () => {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
+          <img src={item.image}  alt={item.title}/>
             <h4>{item.title} : ${item.price.toFixed(2)}</h4>
             <h4>QTY : {item.quantity}</h4>
             <div>
