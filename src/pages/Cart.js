@@ -8,11 +8,10 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
 
+  // Clear the entire localStorage
   const handleResetCart = () => {
     // Remove all items from the Redux store
-    cartItems.forEach((item) => dispatch(removeFromCart(item)));
-    
-    // Clear the entire localStorage
+    cartItems.forEach((item) => dispatch(removeFromCart(item)));    
     localStorage.clear();
   };
 
