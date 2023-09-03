@@ -38,12 +38,12 @@ function App() {
 
             <div className="world-right">
               <Routes>
-              <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home />} />
 
-              <Route path="/products" element={<Products/>} />
-              <Route path="/product/:id" element={<product/>} />
-              <Route path="/cart" element={<Cart/>} />
-            </Routes>    
+                <Route path="/products" element={<Products/>} />
+                <Route path="/product/:id" element={<Product/>} />
+                <Route path="/cart" element={<Cart/>} />
+              </Routes>    
           </div>
       </div>
     </Router>
