@@ -1,0 +1,33 @@
+
+
+.cart .item-container{
+    padding: 3rem 0;
+    border:  1px solid lightgray;
+}
+.cart .img-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .cart-img{
+
+  
+  
+    width:  5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+
+  }
+
+
+  .cart .img-container .title{
+    padding-left: 2rem;
+
+  }
+
+  .cart .price-container{
+    padding-right: 2rem;
+  }

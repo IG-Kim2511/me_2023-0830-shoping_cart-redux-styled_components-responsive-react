@@ -4,6 +4,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/reducers/cartReducer';
 
+import "./cart.css"
+
+
 const Cart = () => {
   // Redux setup
   const dispatch = useDispatch();
@@ -34,10 +37,17 @@ const Cart = () => {
       <h2>Cart Page</h2>
       <ul>
         {cartItems.map((item) => (
-          <li key={item.id}>
-          <img src={item.image}  alt={item.title}/>
-            <h4>{item.title} : ${item.price.toFixed(2)}</h4>
-            <h4>QTY : {item.quantity}</h4>
+          <li key={item.id} className='item-container'>
+            <main className='img-container'>
+              <div>
+                <img className="cart-img" src={item.image}  alt={item.title}/>
+                <h4 className='title'>{item.title}</h4>
+              </div>
+              <div className='price-container'>
+                <h4>Price  : ${item.price.toFixed(2)}</h4>
+                <h4>QTY : {item.quantity}</h4>
+              </div>
+            </main>
             <div>
               <button className="myButton" onClick={() => dispatch(decreaseQuantity(item))}>-</button>
               <button className="myButton" onClick={() => dispatch(increaseQuantity(item))}>+</button>
