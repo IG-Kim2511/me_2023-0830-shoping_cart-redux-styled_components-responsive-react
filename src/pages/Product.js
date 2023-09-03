@@ -22,7 +22,7 @@ const Product = () => {
 
 
 
-  const { id } = useParams();
+  const { id } = useParams();  
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
