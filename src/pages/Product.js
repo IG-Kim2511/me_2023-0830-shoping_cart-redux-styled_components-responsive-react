@@ -26,19 +26,53 @@ const Product = () => {
     fetchData();
   }, [id]);
 
+
+    // 🥒js0310-0440. redux -----------------------🎃
+  
+    // const dispatch = useDispatch();
+
+  // loading
   if (!product) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <h2>{product.title}</h2>
-      <p>Price: ${product.price}</p>
-      <p>Rating: {product.rating.rate}</p>
-      <img src={product.image} alt={product.title} />
-      <p>{product.description}</p>
+      <div className="item-wrap">
+        <div className="items">
+          <div className="item">
+            <div className="img-parents">
+              <img src={product.image} alt={product.title} />
+            </div>
+          </div>
+
+          <div className="item">
+            <h3 className="title">Name: {product.title}</h3>
+            <div className="price">$ {product.price}</div>
+            <div className="description">Desc: {product.description}</div>
+          
+          </div>
+
+          
+        {/* 🥒js0310-0440. redux  */}
+
+        <button className='myButton' onClick={()=>{}}>add to Cart</button>
+
+        </div>
+
+
+      </div>
+     
     </div>
   );
 };
 
 export default Product;
+
+
+/* 
+ <h2>{product.title}</h2>
+      <p>Price: ${product.price}</p>
+      <p>Rating: {product.rating.rate}</p>
+      <img src={product.image} alt={product.title} />
+      <p>{product.description}</p> */
