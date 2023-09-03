@@ -26,41 +26,49 @@ import Cart from './pages/Cart';
 import Product from './pages/Product';
 
 
+// 👉redux
+import { Provider } from 'react-redux';
+import store from './store';
+
+
 
 
 function App() {
   return (
-    <Router>
-      <div className="world">
-          <div className="world-left">
-            <nav className='nav'>
-              <ul>
-                <li>
-                  <Link to="/" className='myButton'>Home</Link>
-                </li>
-                <li>
-                  <Link to="/products"  className='myButton'>products</Link>
-                </li>
-                <li>
-                  <Link to="/cart" className='myButton'>cart</Link>
-                </li>
-                
-              </ul>
-            </nav>  
-          </div>
-      
 
-            <div className="world-right">
-              <Routes>
-                <Route path="/" element={<Home />} />
+    <Provider store={store}>
+      <Router>
+        <div className="world">
+            <div className="world-left">
+              <nav className='nav'>
+                <ul>
+                  <li>
+                    <Link to="/" className='myButton'>Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/products"  className='myButton'>products</Link>
+                  </li>
+                  <li>
+                    <Link to="/cart" className='myButton'>cart</Link>
+                  </li>
+                  
+                </ul>
+              </nav>  
+            </div>
+        
 
-                <Route path="/products" element={<Products/>} />
-                <Route path="/product/:id" element={<Product/>} />
-                <Route path="/cart" element={<Cart/>} />
-              </Routes>    
-          </div>
-      </div>
-    </Router>
+              <div className="world-right">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+
+                  <Route path="/products" element={<Products/>} />
+                  <Route path="/product/:id" element={<Product/>} />
+                  <Route path="/cart" element={<Cart/>} />
+                </Routes>    
+            </div>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

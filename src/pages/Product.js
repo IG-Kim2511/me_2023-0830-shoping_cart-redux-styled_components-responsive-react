@@ -6,7 +6,20 @@ indivisual product page with useParams, react router
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../reducers/cartReducer';
+
+
+
 const Product = () => {
+
+  // 👉redux
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.cart.cartItems);
+
+
+
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -39,7 +52,7 @@ const Product = () => {
   return (
     <div>
       <div className="item-wrap">
-        <div className="items">
+        <main className="items">
           <div className="item">
             <div className="img-parents">
               <img src={product.image} alt={product.title} />
@@ -56,9 +69,9 @@ const Product = () => {
           
         {/* 🥒js0310-0440. redux  */}
 
-        <button className='myButton' onClick={()=>{}}>add to Cart</button>
+        <button  className='myButton' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
 
-        </div>
+        </main>
 
 
       </div>
@@ -67,12 +80,5 @@ const Product = () => {
   );
 };
 
-export default Product;
 
-
-/* 
- <h2>{product.title}</h2>
-      <p>Price: ${product.price}</p>
-      <p>Rating: {product.rating.rate}</p>
-      <img src={product.image} alt={product.title} />
-      <p>{product.description}</p> */
+export default Product
