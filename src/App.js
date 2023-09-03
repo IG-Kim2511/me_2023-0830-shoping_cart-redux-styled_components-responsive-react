@@ -19,6 +19,8 @@
 show 3page with react router
 */
 
+
+// App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
@@ -33,7 +35,7 @@ import Product from './pages/Product';
 // 👉redux
 import { Provider, useSelector } from 'react-redux';
 import store from './store';
-
+import Nav from './components/Nav';
 
 
 function App() {
@@ -45,26 +47,15 @@ function App() {
     }
   }, []);
 
+
+
   return (
 
     <Provider store={store}>
       <Router>
         <div className="world">
-            <div className="world-left">
-              <nav className='nav'>
-                <ul>
-                  <li>
-                    <Link to="/" className='myButton'>Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/products"  className='myButton'>products</Link>
-                  </li>
-                  <li>
-                    <Link to="/cart" className='myButton'>cart</Link>
-                  </li>
-                  
-                </ul>
-              </nav>  
+            <div className="world-left">      
+              <Nav></Nav>
             </div>
         
 
