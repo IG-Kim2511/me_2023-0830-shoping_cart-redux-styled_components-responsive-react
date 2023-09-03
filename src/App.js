@@ -1,6 +1,6 @@
 /* 
   🚀🚀point skill + AI - all 
-  
+
   🍀show 3page with react router
 
   🍀display it like shoping page
@@ -8,7 +8,10 @@
 
   🍀indivisual product page with useParams, react router
 
-  🍀redux : show example how to use redux with cart and product page. use redux, configurestore, dispatch, reducer, useSelector
+  🍀redux : show example how to use redux with cart and product page.
+   use redux, configurestore, dispatch, reducer, useSelector, localstorage
+  plus, minus,remove button: add plus, minus,remove button on cart page. 
+  localstorage : save items on cart page on localstorage
 */
 
 /* 
@@ -16,7 +19,7 @@
 show 3page with react router
 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import  "./App.css";
@@ -28,13 +31,20 @@ import Product from './pages/Product';
 
 
 // 👉redux
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import store from './store';
 
 
 
-
 function App() {
+  
+  useEffect(() => {
+    // Initialize localStorage if it's empty
+    if (!localStorage.getItem('cartItems')) {
+      localStorage.setItem('cartItems', JSON.stringify([]));
+    }
+  }, []);
+
   return (
 
     <Provider store={store}>
