@@ -2,7 +2,6 @@
 /* 
 🚀🚀point skill + AI
 
-
 display it like shoping page
 react. rating feature with star icon ,  material icon
 */
@@ -18,9 +17,14 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Rating } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../reducers/cartReducer';
+
+
 
 const Products = () => {
 
+  const dispatch = useDispatch();
   // 🥒js0309-1140, filtered data vs fetched data 구별하기용
   const [data, setData] = useState([])
   console.log(data)
@@ -116,7 +120,8 @@ const Products = () => {
         {
           filterData.map(product => (
               <div key={product.id} className='product'>
-                <Link to={`/product/${product.id}`}>
+                
+                  
                   <img src={product.image} alt={product.title}/>
                       <p>{product.title}</p>
                       <p>Price: ${product.price}</p>
@@ -124,11 +129,15 @@ const Products = () => {
 
                       {/* 👉2023-0901 star rating */}
                       <StarRating rating={product.rating.rate} />
-                  </Link>
-                  
+                     
+                      <Link to={`/product/${product.id}`}>   <button className='myButton'> detail</button>   </Link>
+
+                      {/* 👉redux */}
+                      <button  className='myButton' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
               </div>
           ))
         }
+        
           
         </div>  
       </div>

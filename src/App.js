@@ -1,13 +1,14 @@
-
-
 /* 
-🚀🚀point skill + AI - all 
-show 3page with react router
+  🚀🚀point skill + AI - all 
+  
+  🍀show 3page with react router
 
-display it like shoping page
-react. rating feature with star icon ,  material icon
+  🍀display it like shoping page
+  🍀react. rating feature with star icon ,  material icon
 
-indivisual product page with useParams, react router
+  🍀indivisual product page with useParams, react router
+
+  🍀redux : show example how to use redux with cart and product page. use redux, configurestore, dispatch, reducer, useSelector
 */
 
 /* 
