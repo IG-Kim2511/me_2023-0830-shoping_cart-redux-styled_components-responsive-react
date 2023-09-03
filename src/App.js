@@ -1,6 +1,20 @@
 
-// router install
-// redux install
+
+/* 
+🚀🚀point skill + AI - all 
+show 3page with react router
+
+display it like shoping page
+react. rating feature with star icon ,  material icon
+
+indivisual product page with useParams, react router
+*/
+
+/* 
+🚀🚀point skill + AI - App.js
+show 3page with react router
+*/
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 

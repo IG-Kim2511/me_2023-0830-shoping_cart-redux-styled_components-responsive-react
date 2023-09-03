@@ -1,4 +1,12 @@
 
+/* 
+🚀🚀point skill + AI
+
+
+display it like shoping page
+react. rating feature with star icon ,  material icon
+*/
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
