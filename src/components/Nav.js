@@ -2,9 +2,7 @@
 // Nav.js
 import React from 'react'
 import styled from 'styled-components';
-import HomeIcon from '@mui/icons-material/Home';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
+
 
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'

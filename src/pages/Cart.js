@@ -5,6 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/reducers/cartReducer';
 
 import "./cart.css"
+import styled from '@emotion/styled';
+
+
+const Mainst = styled.div`
+
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 
 const Cart = () => {
@@ -38,7 +49,7 @@ const Cart = () => {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id} className='item-container'>
-            <main className='img-container'>
+            <Mainst className='img-container'>
               <div>
                 <img className="cart-img" src={item.image}  alt={item.title}/>
                 <h4 className='title'>{item.title}</h4>
@@ -47,7 +58,7 @@ const Cart = () => {
                 <h4>Price  : ${item.price.toFixed(2)}</h4>
                 <h4>QTY : {item.quantity}</h4>
               </div>
-            </main>
+            </Mainst>
             <div>
               <button className="myButton" onClick={() => dispatch(decreaseQuantity(item))}>-</button>
               <button className="myButton" onClick={() => dispatch(increaseQuantity(item))}>+</button>

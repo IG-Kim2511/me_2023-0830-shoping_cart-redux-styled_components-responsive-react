@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import RightNav from './RightNav';
+import RightNav from './BurgerNav';
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -55,19 +55,20 @@ const Burger = () => {
   const [open, setOpen] = useState(false)
   
   return (
-    <>
+    <div>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />
       </StyledBurger>
-      
+     
       {
         open
         ?<RightNav open={open}/>
         :null
-      }
-    </>
+      }       
+
+    </div>
   )
 }
 
