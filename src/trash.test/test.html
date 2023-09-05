@@ -1,13 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <img src="./" alt="">
-    
-</body>
-</html>
+{window.innerWidth > 750 ? (
+    <ul>
+    <li>
+        <Link to="/" className="myButton">
+        Home
+        </Link>
+    </li>
+    <li>
+        <Link to="/products" className="myButton">
+        Products
+        </Link>
+    </li>
+    <li>
+        <Link to="/cart" className="myButton">
+        Cart ({cartItemCount})
+        </Link>
+    </li>
+    </ul>
+) : (
+    <ul>
+    <li>
+        <Link to="/" className="myButton2">
+          <HomeIcon /> {/* Use the Home icon */}
+        </Link>
+    </li>
+    <li>
+        <Link to="/products" className="myButton2">
+         <LocalMallIcon /> {/* Use the Shopping Cart icon */}
+        </Link>
+    </li>
+    <li>
+        <Link to="/cart" className="myButton2 count">
+          <ShoppingCartIcon /> 
+          ({cartItemCount})
+        </Link>
+    </li>
+    </ul>
+)}

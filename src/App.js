@@ -38,6 +38,7 @@ import store from './store';
 import Nav from './components/Nav';
 
 
+
 function App() {
   
   useEffect(() => {
@@ -53,21 +54,22 @@ function App() {
 
     <Provider store={store}>
       <Router>
-        <div className="world">
-            <div className="world-left">      
-              <Nav></Nav>
-            </div>
-        
+      <div className="world">
+      
+          <div className="world-left">      
+            <Nav/>
+          </div>
+          
 
-              <div className="world-right">
-                <Routes>
-                  <Route path="/" element={<Home />} />
+          <div className="world-right">
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-                  <Route path="/products" element={<Products/>} />
-                  <Route path="/product/:id" element={<Product/>} />
-                  <Route path="/cart" element={<Cart/>} />
-                </Routes>    
-            </div>
+              <Route path="/products" element={<Products/>} />
+              <Route path="/product/:id" element={<Product/>} />
+              <Route path="/cart" element={<Cart/>} />
+            </Routes>    
+          </div>
         </div>
       </Router>
     </Provider>
