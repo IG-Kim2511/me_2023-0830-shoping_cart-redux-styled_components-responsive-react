@@ -7,10 +7,13 @@ const StyledBurger = styled.div`
   height: 2rem;
   position: fixed;
   top: 15px;
-  right: 20px;
+  left: 20px;
   z-index: 20;
+
+  /* 👉0419 responsive */
   display: none;
 
+  /* 🍀0419 responsive */
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
@@ -20,11 +23,18 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? '#ccc' : '#333'};
+
+    /* 👉js0413 */
+    background-color: ${({ open }) => open ? 'grey' : 'black'};
     border-radius: 10px;
+    
     transform-origin: 1px;
+
+    /* 🍀transition */
     transition: all 0.3s linear;
 
+
+    /* 🍀js0413 transform */
     &:nth-child(1) {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
@@ -41,6 +51,7 @@ const StyledBurger = styled.div`
 `;
 
 const Burger = () => {
+  // 🍀js0413 props, transform
   const [open, setOpen] = useState(false)
   
   return (
@@ -50,7 +61,12 @@ const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <RightNav open={open}/>
+      
+      {
+        open
+        ?<RightNav open={open}/>
+        :null
+      }
     </>
   )
 }

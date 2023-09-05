@@ -12,11 +12,25 @@ import Burger from './Burger';
 
 
 // 🦄 styled, responsive
-const NavSt = styled.div`
+const NavSt = styled.div`   
 
+/*   
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 20; */
+
+  /* 👉0419 responsive */
+  /* display: none; */
+
+  /* 🍀0419 responsive */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Nav = () => {
+
     // 👉redux
    // Use useSelector to get cartItems and calculate cart item count
    const cartItems = useSelector((state) => state.cart.cartItems);
@@ -24,7 +38,6 @@ const Nav = () => {
 
 
   return (
-
     <div>
         <NavSt>
             <ul>
