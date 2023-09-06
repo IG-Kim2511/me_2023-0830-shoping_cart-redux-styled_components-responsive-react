@@ -8,13 +8,10 @@ const Home = () => {
       <br />
     
 
-      <h2>skills: react, redux, fetch api, router</h2>
+      <h2>skills: react, redux, fetch api, router, styled-components</h2>
       <br />
     
-      <h1>Let's click Procucts tab on navigation</h1>
-      <br />
 
-      <h1>(You can see my CSS skills from my the other porjects on my portfolio)</h1>
       
     </div>
   )

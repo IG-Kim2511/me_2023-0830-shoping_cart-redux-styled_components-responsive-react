@@ -11,15 +11,14 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
 
-  /* transform: translateX(-100%); */
+  transform: translateX(-100%);
 
   li {
     padding: 18px 10px;
   }
 
   @media (max-width: 768px) {
-    /* display: flex; */
-
+    
     height: 100vh;
     width: 20vw;
     padding-top: 3.5rem;
