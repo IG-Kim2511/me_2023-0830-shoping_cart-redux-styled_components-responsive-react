@@ -34,7 +34,7 @@ import Product from './pages/Product';
 
 // 👉redux
 import { Provider, useSelector } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 import Nav from './components/Nav';
 
 

@@ -11,6 +11,7 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
 
+  /* 🍀'burger nav btn'이 열려있는상태에서는 translate효과가 적용되고 있음. good */
   transform: translateX(-100%);
 
   li {
